@@ -127,8 +127,11 @@ local function base2( gate, input )
 	-- Placeholder for the final result
 	local result = ""
 
+	-- Force the string to only contain valid UTF-8 data
+	local safeInput = utf8.force( input )
+
 	-- Loop through every character in the string
-	for index, decimal in utf8.codes( input ) do
+	for index, decimal in utf8.codes( safeInput ) do
 
 		-- Convert the decimal value to binary
 		local binary = decimalToBinary( decimal )
@@ -155,8 +158,11 @@ local function base8( gate, input )
 	-- Placeholder for the final result
 	local result = ""
 
+	-- Force the string to only contain valid UTF-8 data
+	local safeInput = utf8.force( input )
+
 	-- Loop through every character in the string
-	for index, decimal in utf8.codes( input ) do
+	for index, decimal in utf8.codes( safeInput ) do
 
 		-- Convert the decimal value to octal and apply zero padding
 		local octal = string.format( "%03o ", decimal )
@@ -180,8 +186,11 @@ local function base10( gate, input )
 	-- Placeholder for the final result
 	local result = ""
 
+	-- Force the string to only contain valid UTF-8 data
+	local safeInput = utf8.force( input )
+
 	-- Loop through every character in the string
-	for index, decimal in utf8.codes( input ) do
+	for index, decimal in utf8.codes( safeInput ) do
 
 		-- Convert the decimal value to a string with a space on the end
 		local str = tostring( decimal ) .. " "
@@ -205,8 +214,11 @@ local function base16( gate, input )
 	-- Placeholder for the final result
 	local result = ""
 
+	-- Force the string to only contain valid UTF-8 data
+	local safeInput = utf8.force( input )
+
 	-- Loop through every character in the string
-	for index, decimal in utf8.codes( input ) do
+	for index, decimal in utf8.codes( safeInput ) do
 
 		-- Convert the decimal value to uppercase hex with zero padding
 		local hex = string.format( "%02X ", decimal )
@@ -252,8 +264,11 @@ local function url( gate, input )
 	-- Placeholder for the final result
 	local result = ""
 
+	-- Force the string to only contain valid UTF-8 data
+	local safeInput = utf8.force( input )
+
 	-- Loop through every character in the string
-	for index, decimal in utf8.codes( input ) do
+	for index, decimal in utf8.codes( safeInput ) do
 
 		-- Get the character for this iteration
 		local character = utf8.char( decimal )
