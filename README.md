@@ -28,4 +28,4 @@ A collection of useful gates for use with Wiremod.
 
 ## License
 
-Licensed under GNU AGPLv3, Copyright (C) 2020 viral32111.
+Licensed under GNU AGPLv3, Copyright (C) 2020 - 2021 viral32111.
